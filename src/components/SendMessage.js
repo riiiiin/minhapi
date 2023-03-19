@@ -10,6 +10,7 @@ function SendMessage(props) {
     const sendId = props.sendId;
     const iconUrl = props.iconUrl;
     const receptionUser = props.receptionUser;
+    const receptionName = props.receptionName;
     console.log(iconUrl)
     const usersRef = db.collection('room').doc(roomId);
     
@@ -24,7 +25,8 @@ function SendMessage(props) {
           uid,
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
           roomId: roomId,
-          iconUrl: iconUrl
+          iconUrl: iconUrl,
+          receptionName: receptionName
       });
       setMessage("");
 

@@ -17,6 +17,7 @@ function Chat() {
     const [messages, setMessages] = useState([]);
     const location = useLocation();
     const receptionUser = location.state.id;
+    const receptionName = location.state.name;
     const { user } = useAuthContext();
     let roomId = receptionUser + user.id;
     roomId = roomId.split('');
@@ -82,7 +83,7 @@ function Chat() {
             </div>
         ))}
       </div>
-      <SendMessage roomId={roomId} sendId={user.uid} iconUrl={img} receptionUser={receptionUser} />
+      <SendMessage roomId={roomId} sendId={user.uid} iconUrl={img} receptionUser={receptionUser} uname={name} receptionName={receptionName} />
     </div>    
   );
 }
